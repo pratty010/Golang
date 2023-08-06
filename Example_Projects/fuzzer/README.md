@@ -1,0 +1,1 @@
+This is an example repo for building a fuzzer error tester.

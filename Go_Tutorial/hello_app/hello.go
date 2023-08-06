@@ -2,7 +2,7 @@
 package main //package name same as the main funtion
 
 import (
-	"Go_Web/greetings" //importing internal dependencies
+	"Go_Tutorial/greetings" //importing internal dependencies
 	"fmt"
 	"log"
 

@@ -1,4 +1,4 @@
-module Go_App_Workspace/hello
+module Go_Tutorial/hello_workspace
 
 go 1.19
 

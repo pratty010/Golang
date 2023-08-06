@@ -1,22 +1,13 @@
 // simple hello world program
 package main //package name same as the main funtion
 
-import ( //importing internal dependencies
-	"Go_Web/greetings"
+import (
+	"Go_Web/greetings" //importing internal dependencies
 	"fmt"
 	"log"
 
-	"rsc.io/quote"
+	"rsc.io/quote" //importing external dependencies
 )
-
-// main funtion - entry point to the package
-func main() {
-	hello()
-	hello1()
-	hello2()
-	hello3()
-
-}
 
 // Excercise 1 - simply print "Hello World!!"
 func hello() {
@@ -30,7 +21,7 @@ func hello() {
 // go mod tidy to add the package
 // go mod edit replace to replace the "Go_Web/greetings=../greetings" path
 func hello1() {
-	fmt.Println("Priting hello1fn  -->")
+	fmt.Println("Priting hello1 fn  -->")
 	fmt.Println("Hello World!")
 	fmt.Println(quote.Go()) // use dependency funtion
 	fmt.Println()
@@ -56,6 +47,7 @@ func hello3() {
 
 	// Request a greeting message.
 	message, err := greetings.Hello1("")
+
 	// If an error was returned, print it to the console and
 	// exit the program.
 	if err != nil {
@@ -66,4 +58,34 @@ func hello3() {
 	// to the console.
 	fmt.Println(message)
 	fmt.Println()
+
+	fmt.Println("Priting hello4 fn  -->")
+	message1, err1 := greetings.Hello2("Shinchan") // print random greeting message
+	if err1 != nil {
+		log.Fatal(err1)
+	}
+	fmt.Println(message1)
+	fmt.Println()
+
+	// print random greeting to random people froma list
+	fmt.Println("Priting hello5 fn  -->")
+	// A slice of names.
+	names := []string{"Gladys", "Samantha", "Darrin"}
+
+	// Request greeting messages for the names.
+	messages, err2 := greetings.Hellos(names)
+	if err2 != nil {
+		log.Fatal(err2)
+	}
+	// If no error was returned, print the returned map of
+	// messages to the console.
+	fmt.Println(messages)
+}
+
+// main funtion - entry point to the package
+func main() {
+	hello()
+	hello1()
+	hello2()
+	hello3()
 }
